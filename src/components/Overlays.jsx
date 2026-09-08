@@ -1,15 +1,17 @@
 import { useState } from "react"
-import { Link } from "react-router-dom"
+import { Link, useLocation } from "react-router-dom"
 import { MessageCircle, X } from "lucide-react"
 import { whatsapp } from "../data"
 
 export default function Overlays() {
   const [showTip, setShowTip] = useState(true)
   const [showBar, setShowBar] = useState(true)
+  const { pathname } = useLocation()
+  const isDealerPage = pathname === "/dealerships"
 
   return (
     <>
-      {showBar && (
+      {showBar && !isDealerPage && (
         <div className="fixed bottom-5 left-1/2 z-50 flex w-[min(640px,calc(100%-2rem))] -translate-x-1/2 items-center gap-3 rounded-full border border-hairline bg-canvas px-3 py-2 shadow-[0_12px_40px_rgba(26,26,26,0.14)]">
           <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-primary-brand text-white">
             <MessageCircle className="h-5 w-5" />

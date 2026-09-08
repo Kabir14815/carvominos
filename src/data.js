@@ -3,6 +3,11 @@ export const whatsapp = {
   href: "https://wa.me/14709099027",
 }
 
+export const sales = {
+  email: "sales@carvaminos.com",
+  mailto: "mailto:sales@carvaminos.com",
+}
+
 export const vehicles = [
   { src: "/cars/toyota-camry.png", alt: "Toyota Camry", name: "Toyota Camry" },
   { src: "/cars/ford-f150.png", alt: "Ford F-150 truck", name: "Ford F-150" },

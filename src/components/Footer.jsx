@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom"
 import Logo from "./Logo"
-import { whatsapp } from "../data"
+import { sales, whatsapp } from "../data"
 
 export default function Footer() {
   return (
@@ -40,8 +40,11 @@ export default function Footer() {
             <li>hello@carvaminos.com</li>
             <li>
               <a href={whatsapp.href} target="_blank" rel="noreferrer">
-                WhatsApp {whatsapp.display}
+                {whatsapp.display}
               </a>
+            </li>
+            <li>
+              <a href={sales.mailto}>{sales.email}</a>
             </li>
             <li>Se habla español</li>
             <li>Atlanta metro</li>
