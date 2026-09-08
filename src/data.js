@@ -131,34 +131,34 @@ export const articles = [
 export const faqs = [
   {
     q: "Can I get a car with bad credit?",
-    a: "You may still have options. Different dealerships work with different financing situations. Carvaminos helps you explore dealerships and vehicles that may be a better fit for your circumstances. We do not guarantee approval.",
+    a: "You may still have options. Different lots work with different situations. We do not guarantee approval.",
   },
   {
     q: "What if I have no credit history?",
-    a: "Having little or no credit history does not necessarily mean you have no options. We'll help you explore potential dealerships and vehicles based on your situation.",
+    a: "Little or no history does not mean no options. We help you explore what may fit.",
   },
   {
     q: "What if I've been rejected before?",
-    a: "A previous rejection does not automatically mean every dealership will have the same answer. Different dealerships and financing programs have different requirements.",
+    a: "One no is not every lot’s answer. Programs and requirements differ.",
   },
   {
     q: "Do you guarantee approval?",
-    a: "No. Carvaminos does not guarantee approval. We are not a lender. We help you identify potential vehicle and dealership options based on the information you provide.",
+    a: "No. We are not a lender. We help you see vehicle and dealership options.",
   },
   {
     q: "How many dealerships do you work with?",
-    a: "We have relationships with 100+ dealerships in the Atlanta area. That is how we help you explore more than one possibility.",
+    a: "100+ rooftops in the Atlanta area.",
   },
   {
     q: "Do I have to visit multiple dealerships?",
-    a: "Our goal is to help you narrow down potential options before you spend time visiting dealerships.",
+    a: "We help you narrow options first so you spend less time on the lot.",
   },
   {
     q: "Are you a lender?",
-    a: "No. Carvaminos is a vehicle-matching and dealership connection service. We help you find where you may have a better chance — we do not make loans or promise approval.",
+    a: "No. We match you with dealerships. We do not make loans.",
   },
   {
     q: "Do I have to speak English?",
-    a: "No. We are here for Spanish-speaking drivers in Atlanta. ¿Hablas español? Estamos aquí para ayudarte.",
+    a: "No. ¿Hablas español? Estamos aquí para ayudarte.",
   },
 ]

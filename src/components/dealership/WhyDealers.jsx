@@ -10,10 +10,8 @@ export default function WhyDealers() {
           <h2 className="font-display mt-2 text-3xl font-semibold md:text-4xl">
             Why choose Carvaminos?
           </h2>
-          <p className="mt-4 max-w-3xl leading-relaxed text-charcoal">
-            We combine brief-led creative, tight targeting, and honest handoffs so your BDC gets
-            end-to-end automotive leads that match your inventory—not random rows that wandered in
-            from another campaign.
+          <p className="mt-3 max-w-2xl text-charcoal">
+            Brief-led creative, tight targeting, honest handoffs—leads that match your inventory.
           </p>
         </Reveal>
         <div className="mt-10 grid gap-5 md:grid-cols-3">

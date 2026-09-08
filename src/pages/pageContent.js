@@ -7,9 +7,7 @@ export const optionPages = [
     alt: "Toyota Camry",
     lead: "A low score does not have to be the end of the conversation.",
     body: [
-      "Many people in Atlanta stop looking for a car after one dealership says no. That one answer is not the whole story.",
-      "Different dealerships work with different financing programs. Some look more closely at your job, your down payment, or your recent history — not only the number on a credit report.",
-      "Carvaminos helps you explore lots that may be a more realistic fit for your situation before you spend Saturday driving around.",
+      "One no is not the whole story. Different lots look at job, down payment, and recent history—not only a score. We help you see which Atlanta rooftops may be a more realistic fit.",
     ],
     points: [
       "We do not guarantee approval.",
@@ -25,9 +23,7 @@ export const optionPages = [
     alt: "Honda Civic",
     lead: "No credit history does not automatically mean no options.",
     body: [
-      "If you are new to the U.S., young, or you have simply never financed a car, many lots treat you like you have no chance.",
-      "Some dealerships work with first-time buyers or people building credit. Others do not. That is why one visit can feel so confusing.",
-      "Tell us your situation once. We will help you look across our Atlanta network instead of starting over at every lot.",
+      "If you are new to the U.S., young, or have never financed a car, many lots treat you like you have no chance. Tell us once—we look across our Atlanta network instead of starting over at every lot.",
     ],
     points: [
       "First-time buyers are welcome to start a conversation.",
@@ -43,9 +39,7 @@ export const optionPages = [
     alt: "Toyota RAV4",
     lead: "Someone with $1,000 down should not get the same recommendation as someone with $5,000.",
     body: [
-      "A small down payment, a careful monthly budget, or no insurance yet — these details change what may be realistic.",
-      "We look at your situation as a whole: what you can put down, what you can afford each month, and what kind of vehicle you actually need.",
-      "The goal is not to push a truck or a sedan. The goal is to help you see options that may fit your life.",
+      "Down payment, monthly budget, and the vehicle you actually need change what is realistic. We help you see options that may fit—not a truck you cannot consider.",
     ],
     points: [
       "Be honest about your budget. We will not shame you.",
@@ -61,9 +55,7 @@ export const optionPages = [
     alt: "Ford F-150 at a dealership",
     lead: "One no does not mean every dealership will say the same thing.",
     body: [
-      "Being turned away is embarrassing. Sitting in a waiting room with your family and then hearing “we cannot help you” is something many of our customers already know.",
-      "Different lots and financing programs have different requirements. A previous rejection is useful information — not a final answer for the whole city.",
-      "Carvaminos helps you narrow options first, so you do not have to explain your story five times in one day.",
+      "Different lots have different requirements. A past rejection is useful information—not a final answer. We help you narrow options first so you do not repeat your story all day.",
     ],
     points: [
       "You do not have to visit every lot to find out.",
@@ -76,19 +68,19 @@ export const optionPages = [
 export const helpDetails = [
   {
     title: "What we need from you",
-    text: "A few basics: your credit situation, budget, down payment, and the kind of vehicle you need — car, SUV, or truck. English or Spanish is fine. This is a conversation, not a loan application.",
+    text: "Credit situation, budget, down payment, and vehicle type. English or Spanish. A conversation, not a loan app.",
   },
   {
     title: "What we do with that",
-    text: "We use our relationships with 100+ Atlanta-area dealerships to identify vehicles and lots that may fit your particular situation. A 400 score and no credit history are not the same recommendation.",
+    text: "We look across 100+ Atlanta lots. A 400 score and no credit history are not the same recommendation.",
   },
   {
     title: "What you decide",
-    text: "You see potential matches. You choose which dealership or vehicle you want to explore. There is no pressure to commit to a loan with us — we do not make loans.",
+    text: "You pick which dealership or vehicle to explore. No loan with us—we do not make loans.",
   },
   {
     title: "What we never say",
-    text: "We never say everyone gets approved, guaranteed approval, or “no matter what, we will get you a car.” That would not be honest.",
+    text: "We never say everyone gets approved or guaranteed approval. That would not be honest.",
   },
 ]
 

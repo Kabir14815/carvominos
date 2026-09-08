@@ -76,11 +76,10 @@ export default function Hero() {
             Finding the right car{" "}
             <span className="text-primary-brand">shouldn&apos;t feel impossible</span>
           </h1>
-          <p className="mb-6 max-w-xl text-justify text-base leading-relaxed text-charcoal md:text-lg">
-            Bad credit? Limited credit? A difficult financial situation? Carvaminos helps
-            Spanish-speaking drivers in Atlanta find vehicle options and dealerships that may be
-            a better fit. Save time. Avoid unnecessary dealership visits. Find your options with
-            confidence.
+          <p className="mb-6 max-w-xl text-base leading-relaxed text-charcoal md:text-lg">
+            Bad credit? Tight budget? Carvaminos helps Spanish-speaking drivers in Atlanta find
+            vehicle and dealership options that may fit—without spending Saturday at lots that
+            will not work.
           </p>
           <div className="mb-6 flex flex-col items-stretch gap-4 sm:flex-row sm:items-center">
             <FlowButton href="/contact">See My Options</FlowButton>

@@ -10,17 +10,14 @@ export default function DealerFinale() {
       <div className="mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
         <Reveal>
           <p className="text-xs font-semibold uppercase tracking-[0.28px] text-primary-brand">
-            Finale · Roll credits
+            Get started
           </p>
           <h2 className="font-display mt-2 text-3xl font-semibold md:text-4xl">
-            Thirty quiet minutes—no trailer, no spoiler reel
+            Thirty minutes. A 30-to-60-day outline.
           </h2>
           <p className="mt-4 leading-relaxed text-charcoal">
-            Bring your GSM, your marketing lead, whoever owns the showroom story. We are a marketing
-            company that provides leads—so we need your truth: the shoppers you want, the offers
-            that are real, the volume that would feel like a win. You walk away with a plain
-            outline: how we would market first, how we would qualify and deliver leads, and what
-            “working” looks like in thirty to sixty days—before you commit to a longer run.
+            Bring your GSM or marketing lead. Tell us the shoppers you want and the volume that
+            would feel like a win. No long pitch.
           </p>
           <img
             src="/cars/toyota-camry.png"
@@ -56,35 +53,31 @@ export default function DealerFinale() {
             setSent(true)
           }}
         >
-          <h3 className="font-display text-2xl font-semibold">Book the quiet room</h3>
-          <label className="mt-5 block text-sm font-semibold">Dealership / rooftop</label>
+          <h3 className="font-display text-2xl font-semibold">Book a call</h3>
+          <label className="mt-5 block text-sm font-semibold">Dealership</label>
           <input required className="mt-1 w-full rounded-xl border border-hairline bg-canvas px-3 py-2" placeholder="Atlanta Ford" />
-          <label className="mt-4 block text-sm font-semibold">Your name and role</label>
+          <label className="mt-4 block text-sm font-semibold">Name</label>
           <input required className="mt-1 w-full rounded-xl border border-hairline bg-canvas px-3 py-2" placeholder="GSM / marketing lead" />
-          <label className="mt-4 block text-sm font-semibold">Work email or phone</label>
+          <label className="mt-4 block text-sm font-semibold">Email or phone</label>
           <input required className="mt-1 w-full rounded-xl border border-hairline bg-canvas px-3 py-2" placeholder="you@dealership.com" />
-          <label className="mt-4 block text-sm font-semibold">Markets you defend</label>
-          <input className="mt-1 w-full rounded-xl border border-hairline bg-canvas px-3 py-2" placeholder="Atlanta metro, specific ZIP clusters" />
-          <label className="mt-4 block text-sm font-semibold">Inventory priorities</label>
+          <label className="mt-4 block text-sm font-semibold">Focus</label>
           <select className="mt-1 w-full rounded-xl border border-hairline bg-canvas px-3 py-2">
             <option>New inventory</option>
             <option>Used & CPO</option>
-            <option>Finance / special finance</option>
+            <option>Finance</option>
             <option>Service-to-sales</option>
-            <option>A mix across rooftops</option>
+            <option>A mix</option>
           </select>
-          <label className="mt-4 block text-sm font-semibold">What winning volume looks like</label>
+          <label className="mt-4 block text-sm font-semibold">Notes</label>
           <textarea
-            className="mt-1 min-h-24 w-full rounded-xl border border-hairline bg-canvas px-3 py-2"
-            placeholder="30–60 day target, trims you can actually deliver..."
+            className="mt-1 min-h-20 w-full rounded-xl border border-hairline bg-canvas px-3 py-2"
+            placeholder="Markets, volume goal, trims you can deliver..."
           />
           <button className="mt-5 w-full rounded-md bg-primary-brand py-3 text-sm font-medium text-white">
-            Book the quiet room
+            Book a call
           </button>
           {sent && (
-            <p className="mt-3 text-sm text-charcoal">
-              Thank you. We will follow up with a 30-to-60-day outline—no trailer, no spoiler reel.
-            </p>
+            <p className="mt-3 text-sm text-charcoal">Thank you. We will follow up shortly.</p>
           )}
         </form>
       </div>

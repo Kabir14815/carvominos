@@ -17,9 +17,9 @@ export default function SceneHandoff() {
             Scene IV · The handoff in one breath
           </p>
           <h2 className="font-display mt-2 text-3xl font-semibold md:text-4xl">
-            From our campaigns to your phones—with the receipt attached
+            Campaigns to your phones—receipt attached
           </h2>
-          <ul className="mt-6 space-y-4 text-sm leading-relaxed text-charcoal">
+          <ul className="mt-6 space-y-3 text-sm leading-relaxed text-charcoal">
             {handoffPoints.map((point) => (
               <li key={point}>{point}</li>
             ))}

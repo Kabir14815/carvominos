@@ -19,14 +19,8 @@ export default function About() {
         <div className="mx-auto max-w-3xl px-4 sm:px-6">
           <h2 className="font-display text-3xl font-semibold">What Carvaminos is</h2>
           <p className="mt-4 leading-relaxed text-charcoal">
-            Think of us as the friendly person who helps you navigate car buying when you do not
-            know where to start. You tell us your situation. We help you understand what options
-            may make sense across 100+ Atlanta-area dealerships.
-          </p>
-          <p className="mt-4 leading-relaxed text-charcoal">
-            Many customers come to us nervous: “What if they reject me again?” “I don’t have good
-            credit.” “I don’t want to waste another day at a dealership.” We built this so you
-            would not have to feel that way alone.
+            Tell us your situation. We help you see options across 100+ Atlanta-area dealerships—so
+            you do not have to feel alone after a no, a low score, or another wasted Saturday.
           </p>
           <h2 className="font-display mt-10 text-3xl font-semibold">What we are not</h2>
           <ul className="mt-4 space-y-2 text-charcoal">
