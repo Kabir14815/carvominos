@@ -24,21 +24,67 @@ export const vehicles = [
 export const situations = [
   {
     id: "bad-credit",
+    label: "Common",
     title: "Bad credit",
-    text: "Low score or past problems? You may still have options to explore.",
+    text: "Late payments, collections, or a repo. Lenders here weigh income and stability—not only the score.",
   },
   {
     id: "no-credit",
-    title: "No credit",
-    text: "Little or no credit history does not mean you have no options.",
+    label: "Common",
+    title: "No credit / first time",
+    text: "First-time buyer programs exist. A car loan can also help you start building credit.",
+  },
+  {
+    id: "itin",
+    label: "Common",
+    title: "ITIN holders",
+    text: "No Social Security number required. ITIN plus income and residence, with the right lenders. Se habla español.",
+  },
+  {
+    id: "matricula",
+    label: "Common",
+    title: "Matricula or passport",
+    text: "Some lenders accept a matricula consular or foreign passport, plus recent bank statements.",
+  },
+  {
+    id: "self-employed",
+    label: "Common",
+    title: "Self employed",
+    text: "No pay stubs? Bank statements with consistent deposits can work as proof of income.",
+  },
+  {
+    id: "no-license",
+    label: "Case by case",
+    title: "No driver license",
+    text: "Some lenders accept other government ID. We tell you what’s possible before you waste a trip.",
+  },
+  {
+    id: "documentation",
+    label: "Case by case",
+    title: "Documentation issues",
+    text: "Missing papers, expired ID, or a name that does not match. We check what a lot can work with first.",
+  },
+  {
+    id: "prime-credit",
+    label: "Best rate",
+    title: "Prime credit",
+    text: "Good credit deserves competition. We match you with dealers whose lenders fight for sharper rates.",
+  },
+  {
+    id: "lease",
+    label: "Available",
+    title: "Lease deals",
+    text: "Want lower payments or a newer car? Tell us—we route you to lease options that may fit.",
   },
   {
     id: "tight-budget",
+    label: "Common",
     title: "Tight budget",
-    text: "Limited down payment? We'll look for a more realistic fit.",
+    text: "Limited down payment? We look for a more realistic fit.",
   },
   {
     id: "rejected-before",
+    label: "Common",
     title: "Rejected before",
     text: "A no at one dealership does not mean every place will say no.",
   },
@@ -53,7 +99,7 @@ export const steps = [
   {
     n: "02",
     title: "We look for potential matches",
-    text: "We use our network of 100+ Atlanta-area dealerships to help identify vehicles and lots that may fit your situation.",
+    text: "We use our U.S. dealership network to help identify vehicles and lots that may fit your situation.",
   },
   {
     n: "03",
@@ -77,7 +123,7 @@ export const reasons = [
     text: "You shouldn't have to explain your situation over and over. Tell us once. We'll help you see possible next steps.",
   },
   {
-    title: "100+ Atlanta dealerships",
+    title: "U.S. dealership network",
     text: "Instead of one dealership and a long wait, you can explore potential options across a broader network.",
   },
   {
@@ -91,19 +137,19 @@ export const stories = [
     quote:
       "I thought my credit meant I had no chance. They didn't promise me a car. They helped me see which dealerships might actually be worth my time.",
     name: "Gourav Kamboj",
-    role: "Atlanta driver",
+    role: "U.S. driver"
   },
   {
     quote:
       "I don't have much credit history. Other places made me feel like I was wasting their time. Here, someone explained my options in simple words.",
     name: "Rohit Sahani",
-    role: "First-time buyer, Atlanta",
+    role: "First-time buyer"
   },
   {
     quote:
       "I used to spend whole Saturdays going from lot to lot. Carvaminos helped me narrow things down first. Less driving. Less waiting. Less stress.",
     name: "Rushil Sehgal",
-    role: "Atlanta, GA",
+    role: "U.S. shopper"
   },
 ]
 
@@ -142,12 +188,16 @@ export const faqs = [
     a: "One no is not every lot’s answer. Programs and requirements differ.",
   },
   {
+    q: "What if my papers are incomplete?",
+    a: "Missing ID, expired documents, or a name mismatch is common. We check what a rooftop can work with before you go. No guarantee.",
+  },
+  {
     q: "Do you guarantee approval?",
     a: "No. We are not a lender. We help you see vehicle and dealership options.",
   },
   {
     q: "How many dealerships do you work with?",
-    a: "100+ rooftops in the Atlanta area.",
+    a: "100+ rooftops across the United States. We are based in Atlanta."
   },
   {
     q: "Do I have to visit multiple dealerships?",

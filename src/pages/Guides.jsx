@@ -18,7 +18,7 @@ const extra = [
   },
   {
     title: "Do I have to speak English?",
-    text: "No. We are here for Spanish-speaking drivers in Atlanta. ¿Hablas español? Estamos aquí para ayudarte.",
+    text: "No. We are here for Spanish-speaking drivers across the U.S. ¿Hablas español? Estamos aquí para ayudarte.",
     img: "/cars/toyota-camry.png",
     alt: "Toyota Camry",
   },

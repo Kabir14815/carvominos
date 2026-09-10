@@ -14,7 +14,7 @@ export default function Stories() {
         <div className="mt-8 grid gap-4 sm:grid-cols-3">
           {[
             ["4.9 / 5", "Simple, human help"],
-            ["100+", "Atlanta-area dealerships"],
+            ["100+", "U.S. dealerships"],
             ["100%", "Honest — no approval promises"],
           ].map(([n, l]) => (
             <div key={l} className="rounded-2xl bg-canvas p-5">

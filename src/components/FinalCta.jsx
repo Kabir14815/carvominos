@@ -6,7 +6,7 @@ export default function FinalCta() {
       <div className="mx-auto max-w-7xl rounded-2xl bg-ink px-8 py-16 text-center text-white md:py-20">
         <p className="text-sm font-semibold text-primary-soft">Ready when you are</p>
         <h2 className="font-display mt-2 text-4xl font-extrabold tracking-tight md:text-6xl">
-          CARVAMINOS <span className="text-primary-brand">ATLANTA</span>
+          CARVAMINOS <span className="text-primary-brand">U.S.A.</span>
         </h2>
         <p className="mx-auto mt-4 max-w-2xl text-white/80">
           Your credit situation doesn&apos;t have to stop you from looking for a car. We&apos;ll

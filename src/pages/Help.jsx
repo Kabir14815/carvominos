@@ -31,9 +31,9 @@ export default function Help() {
           <div className="rounded-3xl bg-primary-soft/50 p-8">
             <h2 className="font-display text-2xl font-semibold">What happens after you contact us?</h2>
             <p className="mt-3 max-w-3xl text-charcoal">
-              You tell us your situation. We look for potential matches across our Atlanta dealership
+              You tell us your situation. We look for potential matches across our U.S. dealership
               network. Then you decide which vehicle or lot you want to explore. You are not applying
-              for a loan with Carvaminos. We are the bridge between you and the dealerships.
+              for a loan with Carvaminos.
             </p>
             <Link to="/contact" className="mt-5 inline-flex rounded-md bg-primary-brand px-5 py-2.5 text-sm font-medium text-white">
               See My Options

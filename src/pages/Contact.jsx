@@ -43,6 +43,13 @@ export default function Contact() {
             <select className="mt-1 w-full rounded-xl border border-hairline px-3 py-2">
               <option>Bad or low credit</option>
               <option>Little or no credit history</option>
+              <option>ITIN / no Social Security number</option>
+              <option>Matricula or passport ID</option>
+              <option>Self employed — no pay stubs</option>
+              <option>Documentation issues</option>
+              <option>No driver license</option>
+              <option>Prime credit / best rate</option>
+              <option>Lease deals</option>
               <option>Small down payment</option>
               <option>Rejected by a dealership before</option>
               <option>I’m not sure — I just need a car</option>
@@ -90,8 +97,8 @@ export default function Contact() {
                 </a>
               </li>
               <li>Se habla español</li>
-              <li>Atlanta metro</li>
-              <li>Atlanta, Georgia</li>
+              <li>Serving the United States</li>
+              <li>HQ: Atlanta, Georgia</li>
             </ul>
             <img
               src="/cars/jeep-wrangler.jpg"

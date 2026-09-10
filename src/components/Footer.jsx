@@ -9,17 +9,18 @@ export default function Footer() {
         <div>
           <Logo className="h-24 w-auto" to="/" />
           <p className="mt-2 text-sm text-charcoal">
-            Helping Spanish-speaking drivers in Atlanta find vehicle and dealership options that
-            may fit their situation.
+            Helping Spanish-speaking drivers across the U.S. find vehicle and dealership options
+            that may fit. Based in Atlanta.
           </p>
         </div>
         <div>
           <h3 className="mb-3 text-xs font-semibold uppercase tracking-[0.7px]">Support for your situation</h3>
           <ul className="space-y-2 text-sm text-charcoal">
-            <li><Link to="/options#bad-credit">Bad credit options</Link></li>
-            <li><Link to="/options#no-credit">No-credit options</Link></li>
-            <li><Link to="/options#tight-budget">Tight budget options</Link></li>
-            <li><Link to="/options#rejected-before">Rejected-before options</Link></li>
+            <li><Link to="/options#bad-credit">Bad credit</Link></li>
+            <li><Link to="/options#documentation">Documentation issues</Link></li>
+            <li><Link to="/options#itin">ITIN holders</Link></li>
+            <li><Link to="/options#no-license">No driver license</Link></li>
+            <li><Link to="/options">All situations</Link></li>
           </ul>
         </div>
         <div>
@@ -47,8 +48,8 @@ export default function Footer() {
               <a href={sales.mailto}>{sales.email}</a>
             </li>
             <li>Se habla español</li>
-            <li>Atlanta metro</li>
-            <li>Atlanta, Georgia</li>
+            <li>Serving the United States</li>
+            <li>HQ: Atlanta, Georgia</li>
           </ul>
         </div>
       </div>

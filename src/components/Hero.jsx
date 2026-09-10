@@ -50,7 +50,7 @@ const cards = [
     pos: "left-2 top-[58%] xl:-left-8",
   },
   {
-    title: "Atlanta Drivers",
+    title: "U.S. Drivers",
     text: "We understand people in your situation",
     img: "/cars/ford-f150-lot.jpg",
     alt: "Ford F-150 at a lot",
@@ -70,16 +70,15 @@ export default function Hero() {
           transition={{ duration: 0.55 }}
         >
           <p className="mb-4 text-xs font-medium uppercase tracking-[0.28px] text-graphite">
-            Helping Spanish-speaking drivers in Atlanta
+            Helping Spanish-speaking drivers across the U.S.
           </p>
           <h1 className="font-display mb-4 text-left text-4xl font-medium leading-none text-ink md:text-6xl">
             Finding the right car{" "}
             <span className="text-primary-brand">shouldn&apos;t feel impossible</span>
           </h1>
           <p className="mb-6 max-w-xl text-base leading-relaxed text-charcoal md:text-lg">
-            Bad credit? Tight budget? Carvaminos helps Spanish-speaking drivers in Atlanta find
-            vehicle and dealership options that may fit—without spending Saturday at lots that
-            will not work.
+            Bad credit? Tight budget? Missing papers? Carvaminos helps Spanish-speaking drivers
+            across the U.S. find vehicle and dealership options that may fit.
           </p>
           <div className="mb-6 flex flex-col items-stretch gap-4 sm:flex-row sm:items-center">
             <FlowButton href="/contact">See My Options</FlowButton>
@@ -98,7 +97,7 @@ export default function Hero() {
             </span>
             <span className="inline-flex items-center gap-1.5">
               <Star className="h-4 w-4 text-primary-brand" />
-              Atlanta, Georgia
+              Based in Atlanta · Serving the U.S.
             </span>
           </div>
         </motion.div>

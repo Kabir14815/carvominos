@@ -11,7 +11,7 @@ export default function Dealers() {
       <PageHero
         eyebrow="Dealers"
         title="One situation. Multiple possibilities."
-        text="Our network of 100+ Atlanta-area dealerships is not something we brag about. It is how we help you save time — so you are not limited to one lot and one long wait."
+        text="Our network of 100+ U.S. dealerships is how we help you save time—so you are not limited to one lot and one long wait."
         image="/cars/ford-f150-lot.jpg"
         alt="Ford F-150 at a dealership lot"
       />

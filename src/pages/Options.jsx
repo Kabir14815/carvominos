@@ -9,7 +9,7 @@ export default function Options() {
       <PageHero
         eyebrow="Options"
         title="Your credit isn’t the whole story"
-        text="Bad credit, no credit, a small down payment, or a past rejection — everyone’s situation is different. We help Spanish-speaking drivers in Atlanta explore vehicles and dealerships that may fit."
+        text="Bad credit, missing papers, ITIN, or a past rejection—everyone’s situation is different. We help Spanish-speaking drivers across the U.S. explore vehicles and dealerships that may fit."
         image="/cars/toyota-rav4.jpg"
         alt="Toyota RAV4"
       />

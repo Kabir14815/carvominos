@@ -10,8 +10,8 @@ export default function Network() {
             One situation. <span className="text-primary-brand">Multiple possibilities.</span>
           </h2>
           <p className="mt-4 text-charcoal">
-            Our network of 100+ Atlanta-area dealerships gives you more places to explore
-            instead of limiting yourself to one lot.
+            Our network of 100+ U.S. dealerships gives you more places to explore instead of
+            limiting yourself to one lot.
           </p>
           <p className="mt-6 font-display text-5xl font-extrabold text-primary-brand">100+</p>
           <p className="text-sm font-semibold text-graphite">lots to explore</p>
