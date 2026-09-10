@@ -20,16 +20,13 @@ export default function DealerFinale() {
             would feel like a win. No long pitch.
           </p>
           <img
-            src="/cars/toyota-camry.png"
-            alt="Red Toyota Camry"
-            className="mt-8 h-48 w-full rounded-2xl object-contain bg-cloud"
+            src="/carvaminos-auto-leads-logo.jpg"
+            alt="Carvaminos Auto Leads"
+            className="mt-8 w-full max-w-sm rounded-3xl object-contain"
           />
-          <div className="mt-8 flex items-center gap-4">
-            <img src="/carvaminos-logo.jpg" alt="Carvaminos Auto Leads mascot logo" className="h-20 w-auto" />
-            <div>
-              <p className="font-semibold">Leads that drive results</p>
-              <p className="text-sm text-charcoal">Brief-led campaigns & qualified leads for dealers.</p>
-            </div>
+          <div className="mt-6">
+            <p className="font-semibold">Leads that drive results</p>
+            <p className="text-sm text-charcoal">Brief-led campaigns & qualified leads for dealers.</p>
           </div>
           <ul className="mt-6 space-y-2 text-sm text-charcoal">
             <li>

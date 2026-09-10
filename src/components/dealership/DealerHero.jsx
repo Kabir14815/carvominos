@@ -51,15 +51,15 @@ export default function DealerHero() {
         </motion.div>
 
         <motion.div
-          className="relative flex min-h-[240px] items-end justify-center lg:min-h-[420px]"
+          className="relative flex min-h-[240px] items-center justify-center lg:min-h-[420px]"
           initial={{ opacity: 0, scale: 0.96 }}
           animate={{ opacity: 1, scale: 1 }}
         >
           <div className="absolute left-1/2 top-1/2 h-64 w-72 -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary-brand/20 blur-2xl" />
           <img
-            src="/hispano/hero-pickup-corner.png"
-            alt="Pickup truck"
-            className="relative z-10 w-full max-w-lg object-contain"
+            src="/carvaminos-auto-leads-logo.jpg"
+            alt="Carvaminos Auto Leads"
+            className="relative z-10 w-full max-w-md rounded-3xl object-contain"
           />
         </motion.div>
       </div>
