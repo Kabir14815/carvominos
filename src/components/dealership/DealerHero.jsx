@@ -2,7 +2,7 @@ import { motion } from "framer-motion"
 import { ArrowRight, ShieldCheck } from "lucide-react"
 import { whatsapp } from "../../data"
 
-const chat = `${whatsapp.href}?text=${encodeURIComponent("Hello, I'd like Spanish auto leads from Carvaminos.")}`
+const chat = `${whatsapp.href}?text=${encodeURIComponent("Hello, I'd like Spanish auto leads from Carvamonos.")}`
 
 export default function DealerHero() {
   return (
@@ -19,7 +19,7 @@ export default function DealerHero() {
           animate={{ opacity: 1, y: 0 }}
         >
           <p className="inline-flex rounded-full border border-hairline bg-cloud px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.18em] text-graphite">
-            Carvaminos <span className="mx-1.5 text-primary-brand">/</span> lead lab
+            Carvamonos <span className="mx-1.5 text-primary-brand">/</span> lead lab
           </p>
           <p className="mt-5 text-sm font-medium text-primary-brand">Spanish-first marketing</p>
           <h1 className="font-display mt-2 text-4xl font-medium leading-none text-ink md:text-6xl">
@@ -57,8 +57,8 @@ export default function DealerHero() {
         >
           <div className="absolute left-1/2 top-1/2 h-64 w-72 -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary-brand/20 blur-2xl" />
           <img
-            src="/carvaminos-auto-leads-logo.jpg"
-            alt="Carvaminos Auto Leads"
+            src="/carvamonos-logo.jpg"
+            alt="Carvamonos Auto Leads"
             className="relative z-10 w-full max-w-md rounded-3xl object-contain"
           />
         </motion.div>

@@ -8,7 +8,7 @@ export default function WhyDealers() {
         <Reveal>
           <p className="text-xs font-medium uppercase tracking-[0.28px] text-graphite">Why us</p>
           <h2 className="font-display mt-2 text-3xl font-semibold md:text-4xl">
-            Why choose Carvaminos?
+            Why choose Carvamonos?
           </h2>
           <p className="mt-3 max-w-2xl text-charcoal">
             Brief-led creative, tight targeting, honest handoffs—leads that match your inventory.

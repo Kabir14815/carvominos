@@ -10,7 +10,7 @@ export default function Help() {
     <>
       <PageHero
         eyebrow="Help"
-        title="How Carvaminos works"
+        title="How Carvamonos works"
         text="Four simple steps. No complicated language. No trip across town until you have a better idea of where to start."
         image="/cars/ford-f150.png"
         alt="Ford F-150"
@@ -33,7 +33,7 @@ export default function Help() {
             <p className="mt-3 max-w-3xl text-charcoal">
               You tell us your situation. We look for potential matches across our U.S. dealership
               network. Then you decide which vehicle or lot you want to explore. You are not applying
-              for a loan with Carvaminos.
+              for a loan with Carvamonos.
             </p>
             <Link to="/contact" className="mt-5 inline-flex rounded-md bg-primary-brand px-5 py-2.5 text-sm font-medium text-white">
               See My Options

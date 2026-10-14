@@ -6,7 +6,7 @@ import FinalCta from "../components/FinalCta"
 const extra = [
   {
     title: "Do you guarantee approval?",
-    text: "No. Carvaminos does not guarantee approval. We help you identify potential vehicle and dealership options based on what you tell us.",
+    text: "No. Carvamonos does not guarantee approval. We help you identify potential vehicle and dealership options based on what you tell us.",
     img: "/cars/nissan-suv.jpg",
     alt: "Nissan SUV",
   },

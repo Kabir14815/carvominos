@@ -10,14 +10,14 @@ export default function About() {
       <PageHero
         eyebrow="About"
         title="We’re here to help — not judge"
-        text="Carvaminos is a vehicle-matching and dealership connection service for Spanish-speaking people across the U.S. We are based in Atlanta. We are not a bank, a lender, or a pushy car lot."
+        text="Carvamonos is a vehicle-matching and dealership connection service for Spanish-speaking people across the U.S. We are based in Atlanta. We are not a bank, a lender, or a pushy car lot."
         image="/cars/toyota-tacoma.jpg"
         alt="Toyota Tacoma"
       />
 
       <section className="bg-canvas py-16">
         <div className="mx-auto max-w-3xl px-4 sm:px-6">
-          <h2 className="font-display text-3xl font-semibold">What Carvaminos is</h2>
+          <h2 className="font-display text-3xl font-semibold">What Carvamonos is</h2>
           <p className="mt-4 leading-relaxed text-charcoal">
             Tell us your situation. We help you see options across 100+ U.S. dealerships—so you do
             not have to feel alone after a no, a low score, missing papers, or another wasted Saturday.

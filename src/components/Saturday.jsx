@@ -13,7 +13,7 @@ export default function Saturday() {
             You shouldn&apos;t sit for hours just to hear they can&apos;t help you
           </p>
           <p className="mt-4 text-charcoal">
-            Carvaminos helps you identify potential vehicle and dealership matches before you
+            Carvamonos helps you identify potential vehicle and dealership matches before you
             make the trip. Less driving. Less waiting. Less stress.
           </p>
           <div className="mt-5 flex flex-wrap gap-2 text-sm font-semibold">

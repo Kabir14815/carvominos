@@ -77,7 +77,7 @@ export default function Contact() {
             </button>
             {sent && (
               <p className="mt-3 text-sm text-charcoal">
-                Thank you. We received your note. A Carvaminos guide will follow up — no judgment,
+                Thank you. We received your note. A Carvamonos guide will follow up — no judgment,
                 and no approval promise.
               </p>
             )}
@@ -90,7 +90,7 @@ export default function Contact() {
               credit is not perfect. Starting here does not commit you to a dealership or a loan.
             </p>
             <ul className="mt-6 space-y-2 text-sm text-charcoal">
-              <li>hello@carvaminos.com</li>
+              <li>hello@carvamonos.com</li>
               <li>
                 <a href={whatsapp.href} target="_blank" rel="noreferrer" className="font-semibold text-primary-brand">
                   WhatsApp {whatsapp.display}

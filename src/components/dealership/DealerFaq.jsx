@@ -10,7 +10,7 @@ export default function DealerFaq() {
       <div className="mx-auto max-w-3xl px-4 sm:px-6">
         <Reveal>
           <p className="text-xs font-medium uppercase tracking-[0.28px] text-graphite">Dealers ask</p>
-          <h2 className="font-display mt-2 text-3xl font-semibold">Carvaminos, in plain answers</h2>
+          <h2 className="font-display mt-2 text-3xl font-semibold">Carvamonos, in plain answers</h2>
         </Reveal>
         <div className="mt-8 divide-y divide-hairline rounded-2xl bg-canvas">
           {dealerFaqs.map((item, i) => (

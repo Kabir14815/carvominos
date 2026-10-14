@@ -4,8 +4,8 @@ export const whatsapp = {
 }
 
 export const sales = {
-  email: "sales@carvaminos.com",
-  mailto: "mailto:sales@carvaminos.com",
+  email: "sales@carvamonos.com",
+  mailto: "mailto:sales@carvamonos.com",
 }
 
 export const vehicles = [
@@ -147,7 +147,7 @@ export const stories = [
   },
   {
     quote:
-      "I used to spend whole Saturdays going from lot to lot. Carvaminos helped me narrow things down first. Less driving. Less waiting. Less stress.",
+      "I used to spend whole Saturdays going from lot to lot. Carvamonos helped me narrow things down first. Less driving. Less waiting. Less stress.",
     name: "Rushil Sehgal",
     role: "U.S. shopper"
   },
@@ -168,7 +168,7 @@ export const articles = [
   },
   {
     title: "How do I stop wasting Saturdays at dealerships?",
-    text: "Carvaminos helps you identify potential matches before you spend your day driving from lot to lot.",
+    text: "Carvamonos helps you identify potential matches before you spend your day driving from lot to lot.",
     img: "/cars/toyota-tacoma.jpg",
     alt: "Toyota Tacoma at a dealership",
   },

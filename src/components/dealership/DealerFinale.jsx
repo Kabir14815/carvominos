@@ -20,8 +20,8 @@ export default function DealerFinale() {
             would feel like a win. No long pitch.
           </p>
           <img
-            src="/carvaminos-auto-leads-logo.jpg"
-            alt="Carvaminos Auto Leads"
+            src="/carvamonos-logo.jpg"
+            alt="Carvamonos Auto Leads"
             className="mt-8 w-full max-w-sm rounded-3xl object-contain"
           />
           <div className="mt-6">

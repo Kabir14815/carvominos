@@ -38,7 +38,7 @@ export default function Footer() {
         <div>
           <h3 className="mb-3 text-xs font-semibold uppercase tracking-[0.7px]">Contact</h3>
           <ul className="space-y-2 text-sm text-charcoal">
-            <li>hello@carvaminos.com</li>
+            <li>hello@carvamonos.com</li>
             <li>
               <a href={whatsapp.href} target="_blank" rel="noreferrer">
                 {whatsapp.display}
@@ -54,7 +54,7 @@ export default function Footer() {
         </div>
       </div>
       <p className="mx-auto mt-10 max-w-7xl px-4 text-xs text-graphite sm:px-6 lg:px-8">
-        © 2026 CARVAMINOS. ALL RIGHTS RESERVED. A vehicle-matching service. Not a lender. Not a
+        © 2026 CARVAMONOS. ALL RIGHTS RESERVED. A vehicle-matching service. Not a lender. Not a
         dealership.
       </p>
     </footer>

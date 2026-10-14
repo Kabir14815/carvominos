@@ -42,7 +42,7 @@ export default function Dealers() {
             ))}
           </div>
           <p className="mt-10 max-w-3xl text-sm text-charcoal">
-            Instead of You → Dealership #1 → Rejected, then Dealership #2 → Rejected, Carvaminos
+            Instead of You → Dealership #1 → Rejected, then Dealership #2 → Rejected, Carvamonos
             helps you explore potential options across a broader network first.
           </p>
           <Link to="/contact" className="mt-6 inline-flex rounded-md bg-primary-brand px-5 py-2.5 text-sm font-medium text-white">

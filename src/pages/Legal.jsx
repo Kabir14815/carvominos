@@ -3,11 +3,11 @@ import { useParams } from "react-router-dom"
 const pages = {
   privacy: {
     title: "Privacy Policy",
-    body: "Carvaminos uses the information you share — name, phone, and a few details about your situation — only to help you explore vehicle and dealership options. We do not sell your story to random lots. We are not a lender.",
+    body: "Carvamonos uses the information you share — name, phone, and a few details about your situation — only to help you explore vehicle and dealership options. We do not sell your story to random lots. We are not a lender.",
   },
   terms: {
     title: "Terms of Service",
-    body: "Carvaminos is a vehicle-matching and dealership connection service. We do not guarantee financing or vehicle availability. Dealerships make their own decisions. You choose every next step.",
+    body: "Carvamonos is a vehicle-matching and dealership connection service. We do not guarantee financing or vehicle availability. Dealerships make their own decisions. You choose every next step.",
   },
   cookies: {
     title: "Cookies Policy",

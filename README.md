@@ -1,4 +1,4 @@
-# Carvaminos
+# Carvamonos
 
 React app. Run `npm run dev` and open http://localhost:5175/
 
@@ -25,6 +25,6 @@ src/
     Contact.jsx
     Guides.jsx
 public/
-  carvaminos-logo.jpg
+  carvamonos-logo.jpg
   cars/                 # vehicle photos
 ```

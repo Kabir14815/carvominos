@@ -77,7 +77,7 @@ export default function Hero() {
             <span className="text-primary-brand">shouldn&apos;t feel impossible</span>
           </h1>
           <p className="mb-6 max-w-xl text-base leading-relaxed text-charcoal md:text-lg">
-            Bad credit? Tight budget? Missing papers? Carvaminos helps Spanish-speaking drivers
+            Bad credit? Tight budget? Missing papers? Carvamonos helps Spanish-speaking drivers
             across the U.S. find vehicle and dealership options that may fit.
           </p>
           <div className="mb-6 flex flex-col items-stretch gap-4 sm:flex-row sm:items-center">

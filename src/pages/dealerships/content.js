@@ -62,7 +62,7 @@ export const handoffPoints = [
 
 export const dealerFaqs = [
   {
-    q: "What does Carvaminos do?",
+    q: "What does Carvamonos do?",
     a: "We run the outreach and send qualified auto leads—with creative, channel, and intent still attached.",
   },
   {
@@ -71,7 +71,7 @@ export const dealerFaqs = [
   },
   {
     q: "Where are you based?",
-    a: "Atlanta, Georgia. We serve rooftops across the U.S. Call +1 (470) 909-9027 or email sales@carvaminos.com.",
+    a: "Atlanta, Georgia. We serve rooftops across the U.S. Call +1 (470) 909-9027 or email sales@carvamonos.com.",
   },
   {
     q: "How do we start?",
