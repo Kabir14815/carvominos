@@ -2,10 +2,24 @@ import { useState } from "react"
 import PageHero from "../components/PageHero"
 import FAQ from "../components/FAQ"
 import FinalCta from "../components/FinalCta"
+import SmsConsentFields from "../components/SmsConsentFields"
 import { whatsapp } from "../data"
 
 export default function Contact() {
   const [sent, setSent] = useState(false)
+  const [preferredLanguage, setPreferredLanguage] = useState("English")
+  const [consentLang, setConsentLang] = useState("en")
+  const [transactionalConsent, setTransactionalConsent] = useState(false)
+  const [promotionalConsent, setPromotionalConsent] = useState(false)
+
+  const handlePreferredLanguageChange = (value) => {
+    setPreferredLanguage(value)
+    if (value === "Spanish") {
+      setConsentLang("es")
+    } else if (value === "English") {
+      setConsentLang("en")
+    }
+  }
 
   return (
     <>
@@ -30,10 +44,29 @@ export default function Contact() {
             <input required className="mt-1 w-full rounded-xl border border-hairline px-3 py-2" placeholder="Maria" />
 
             <label className="mt-4 block text-sm font-semibold">Phone or WhatsApp</label>
-            <input required className="mt-1 w-full rounded-xl border border-hairline px-3 py-2" placeholder="(470) 000-0000" />
+            <input
+              required
+              type="tel"
+              className="mt-1 w-full rounded-xl border border-hairline px-3 py-2"
+              placeholder="(470) 000-0000"
+            />
+
+            <SmsConsentFields
+              idPrefix="contact-sms"
+              language={consentLang}
+              onLanguageChange={setConsentLang}
+              transactionalChecked={transactionalConsent}
+              onTransactionalChange={setTransactionalConsent}
+              promotionalChecked={promotionalConsent}
+              onPromotionalChange={setPromotionalConsent}
+            />
 
             <label className="mt-4 block text-sm font-semibold">Preferred language</label>
-            <select className="mt-1 w-full rounded-xl border border-hairline px-3 py-2">
+            <select
+              value={preferredLanguage}
+              onChange={(e) => handlePreferredLanguageChange(e.target.value)}
+              className="mt-1 w-full rounded-xl border border-hairline px-3 py-2"
+            >
               <option>Spanish</option>
               <option>English</option>
               <option>Either is fine</option>

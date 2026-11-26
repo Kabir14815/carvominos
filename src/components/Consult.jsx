@@ -1,6 +1,13 @@
+import { useState } from "react"
 import Reveal from "./Reveal"
+import SmsConsentFields from "./SmsConsentFields"
 
 export default function Consult() {
+  const [sent, setSent] = useState(false)
+  const [consentLang, setConsentLang] = useState("en")
+  const [transactionalConsent, setTransactionalConsent] = useState(false)
+  const [promotionalConsent, setPromotionalConsent] = useState(false)
+
   return (
     <section id="see-my-options" className="bg-canvas py-8 md:py-10">
       <div className="mx-auto max-w-7xl rounded-3xl bg-cloud px-6 py-12 sm:px-10">
@@ -22,18 +29,41 @@ export default function Consult() {
           </div>
           <form
             className="rounded-2xl border border-hairline bg-canvas p-6"
-            onSubmit={(e) => e.preventDefault()}
+            onSubmit={(e) => {
+              e.preventDefault()
+              setSent(true)
+            }}
           >
             <label className="block text-sm font-semibold">Your name</label>
-            <input className="mt-1 w-full rounded-xl border border-hairline px-3 py-2" placeholder="Maria" />
+            <input required className="mt-1 w-full rounded-xl border border-hairline px-3 py-2" placeholder="Maria" />
             <label className="mt-4 block text-sm font-semibold">Phone or WhatsApp</label>
-            <input className="mt-1 w-full rounded-xl border border-hairline px-3 py-2" placeholder="(470) 000-0000" />
+            <input
+              required
+              type="tel"
+              className="mt-1 w-full rounded-xl border border-hairline px-3 py-2"
+              placeholder="(470) 000-0000"
+            />
+            <SmsConsentFields
+              idPrefix="consult-sms"
+              language={consentLang}
+              onLanguageChange={setConsentLang}
+              transactionalChecked={transactionalConsent}
+              onTransactionalChange={setTransactionalConsent}
+              promotionalChecked={promotionalConsent}
+              onPromotionalChange={setPromotionalConsent}
+            />
             <p className="mt-4 font-display text-3xl font-bold text-primary-brand">
               Free <span className="text-sm font-semibold text-graphite">to start</span>
             </p>
             <button className="mt-4 w-full rounded-full bg-primary-brand py-3 text-sm font-semibold text-white">
               See My Options
             </button>
+            {sent && (
+              <p className="mt-3 text-sm text-charcoal">
+                Thank you. We received your note. A Carvamonos guide will follow up — no judgment,
+                and no approval promise.
+              </p>
+            )}
           </form>
         </Reveal>
       </div>

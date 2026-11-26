@@ -23,6 +23,8 @@ export default function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/guides" element={<Guides />} />
         <Route path="/legal/:slug" element={<Legal />} />
+        <Route path="/privacy-policy" element={<Legal slug="privacy" />} />
+        <Route path="/terms" element={<Legal slug="terms" />} />
       </Route>
     </Routes>
   )
