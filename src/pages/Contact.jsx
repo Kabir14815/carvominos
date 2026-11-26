@@ -53,8 +53,7 @@ const formCopy = {
     freeWord: "Free",
     freeSub: "to start",
     submit: "See My Options",
-    sentMessage:
-      "Thank you. We received your note. A Carvamonos guide will follow up — no judgment, and no approval promise.",
+    sentMessage: "We successfully received your query. Our team will contact you shortly.",
   },
   es: {
     nameLabel: "Tu nombre",
@@ -96,7 +95,7 @@ const formCopy = {
     freeSub: "para empezar",
     submit: "Ver mis opciones",
     sentMessage:
-      "Gracias. Recibimos tu mensaje. Un guía de Carvamonos se pondrá en contacto contigo — sin juicios y sin promesas de aprobación.",
+      "Recibimos tu consulta correctamente. Nuestro equipo se pondrá en contacto contigo pronto.",
   },
 }
 
@@ -143,6 +142,10 @@ export default function Contact() {
             className="rounded-3xl border border-hairline bg-canvas p-6 md:p-8"
             onSubmit={(e) => {
               e.preventDefault()
+              e.currentTarget.reset()
+              setTransactionalConsent(false)
+              setPromotionalConsent(false)
+              setTermsConsent(false)
               setSent(true)
             }}
           >
