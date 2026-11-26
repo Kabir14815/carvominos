@@ -1,4 +1,5 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
+import { CheckCircle2 } from "lucide-react"
 import PageHero from "../components/PageHero"
 import FAQ from "../components/FAQ"
 import FinalCta from "../components/FinalCta"
@@ -53,6 +54,7 @@ const formCopy = {
     freeWord: "Free",
     freeSub: "to start",
     submit: "See My Options",
+    sentTitle: "Query received!",
     sentMessage: "We successfully received your query. Our team will contact you shortly.",
   },
   es: {
@@ -94,6 +96,7 @@ const formCopy = {
     freeWord: "Gratis",
     freeSub: "para empezar",
     submit: "Ver mis opciones",
+    sentTitle: "¡Consulta recibida!",
     sentMessage:
       "Recibimos tu consulta correctamente. Nuestro equipo se pondrá en contacto contigo pronto.",
   },
@@ -111,6 +114,12 @@ export default function Contact() {
   const [termsConsent, setTermsConsent] = useState(false)
 
   const t = formCopy[language] || formCopy.en
+
+  useEffect(() => {
+    if (!sent) return
+    const timer = setTimeout(() => setSent(false), 4000)
+    return () => clearTimeout(timer)
+  }, [sent])
 
   const handleFormLanguageChange = (nextLang) => {
     setLanguage(nextLang)
@@ -138,109 +147,123 @@ export default function Contact() {
 
       <section id="see-my-options" className="bg-cloud py-16">
         <div className="mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
-          <form
-            className="rounded-3xl border border-hairline bg-canvas p-6 md:p-8"
-            onSubmit={(e) => {
-              e.preventDefault()
-              e.currentTarget.reset()
-              setTransactionalConsent(false)
-              setPromotionalConsent(false)
-              setTermsConsent(false)
-              setSent(true)
-            }}
-          >
-            <div className="mb-4 flex items-center justify-end gap-1.5 text-xs">
-              <button
-                type="button"
-                onClick={() => handleFormLanguageChange("en")}
-                className={`rounded-full px-2.5 py-0.5 font-medium transition ${
-                  language === "en"
-                    ? "bg-primary-brand text-white"
-                    : "border border-hairline bg-canvas text-charcoal hover:border-hairline-strong"
-                }`}
-              >
-                English
-              </button>
-              <button
-                type="button"
-                onClick={() => handleFormLanguageChange("es")}
-                className={`rounded-full px-2.5 py-0.5 font-medium transition ${
-                  language === "es"
-                    ? "bg-primary-brand text-white"
-                    : "border border-hairline bg-canvas text-charcoal hover:border-hairline-strong"
-                }`}
-              >
-                Español
-              </button>
-            </div>
-
-            <label className="block text-sm font-semibold">{t.nameLabel}</label>
-            <input
-              required
-              className="mt-1 w-full rounded-xl border border-hairline px-3 py-2"
-              placeholder={t.namePlaceholder}
-            />
-
-            <label className="mt-4 block text-sm font-semibold">{t.phoneLabel}</label>
-            <input
-              required
-              type="tel"
-              className="mt-1 w-full rounded-xl border border-hairline px-3 py-2"
-              placeholder={t.phonePlaceholder}
-            />
-
-            <label className="mt-4 block text-sm font-semibold">{t.preferredLanguageLabel}</label>
-            <select
-              value={preferredLanguage}
-              onChange={(e) => handlePreferredLanguageChange(e.target.value)}
-              className="mt-1 w-full rounded-xl border border-hairline px-3 py-2"
+          {sent ? (
+            <div
+              role="status"
+              aria-live="polite"
+              className="flex min-h-[420px] flex-col items-center justify-center rounded-3xl border border-hairline bg-canvas p-8 text-center md:p-10"
             >
-              {t.languageOptions.map((opt) => (
-                <option key={opt.value} value={opt.value}>
-                  {opt.label}
-                </option>
-              ))}
-            </select>
+              <div className="flex h-16 w-16 items-center justify-center rounded-full bg-emerald-50 text-emerald-600">
+                <CheckCircle2 className="h-10 w-10" strokeWidth={2} />
+              </div>
+              <h2 className="font-display mt-5 text-2xl font-semibold text-ink">{t.sentTitle}</h2>
+              <p className="mt-2 max-w-sm text-sm leading-relaxed text-charcoal">{t.sentMessage}</p>
+            </div>
+          ) : (
+            <form
+              className="rounded-3xl border border-hairline bg-canvas p-6 md:p-8"
+              onSubmit={(e) => {
+                e.preventDefault()
+                e.currentTarget.reset()
+                setTransactionalConsent(false)
+                setPromotionalConsent(false)
+                setTermsConsent(false)
+                setSent(true)
+              }}
+            >
+              <div className="mb-4 flex items-center justify-end gap-1.5 text-xs">
+                <button
+                  type="button"
+                  onClick={() => handleFormLanguageChange("en")}
+                  className={`rounded-full px-2.5 py-0.5 font-medium transition ${
+                    language === "en"
+                      ? "bg-primary-brand text-white"
+                      : "border border-hairline bg-canvas text-charcoal hover:border-hairline-strong"
+                  }`}
+                >
+                  English
+                </button>
+                <button
+                  type="button"
+                  onClick={() => handleFormLanguageChange("es")}
+                  className={`rounded-full px-2.5 py-0.5 font-medium transition ${
+                    language === "es"
+                      ? "bg-primary-brand text-white"
+                      : "border border-hairline bg-canvas text-charcoal hover:border-hairline-strong"
+                  }`}
+                >
+                  Español
+                </button>
+              </div>
 
-            <label className="mt-4 block text-sm font-semibold">{t.situationLabel}</label>
-            <select className="mt-1 w-full rounded-xl border border-hairline px-3 py-2">
-              {t.situations.map((item) => (
-                <option key={item}>{item}</option>
-              ))}
-            </select>
+              <label className="block text-sm font-semibold">{t.nameLabel}</label>
+              <input
+                required
+                className="mt-1 w-full rounded-xl border border-hairline px-3 py-2"
+                placeholder={t.namePlaceholder}
+              />
 
-            <label className="mt-4 block text-sm font-semibold">{t.vehicleLabel}</label>
-            <select className="mt-1 w-full rounded-xl border border-hairline px-3 py-2">
-              {t.vehicles.map((item) => (
-                <option key={item}>{item}</option>
-              ))}
-            </select>
+              <label className="mt-4 block text-sm font-semibold">{t.phoneLabel}</label>
+              <input
+                required
+                type="tel"
+                className="mt-1 w-full rounded-xl border border-hairline px-3 py-2"
+                placeholder={t.phonePlaceholder}
+              />
 
-            <label className="mt-4 block text-sm font-semibold">{t.notesLabel}</label>
-            <textarea
-              className="mt-1 min-h-28 w-full rounded-xl border border-hairline px-3 py-2"
-              placeholder={t.notesPlaceholder}
-            />
+              <label className="mt-4 block text-sm font-semibold">{t.preferredLanguageLabel}</label>
+              <select
+                value={preferredLanguage}
+                onChange={(e) => handlePreferredLanguageChange(e.target.value)}
+                className="mt-1 w-full rounded-xl border border-hairline px-3 py-2"
+              >
+                {t.languageOptions.map((opt) => (
+                  <option key={opt.value} value={opt.value}>
+                    {opt.label}
+                  </option>
+                ))}
+              </select>
 
-            <SmsConsentFields
-              idPrefix="contact-sms"
-              language={language}
-              transactionalChecked={transactionalConsent}
-              onTransactionalChange={setTransactionalConsent}
-              promotionalChecked={promotionalConsent}
-              onPromotionalChange={setPromotionalConsent}
-              termsChecked={termsConsent}
-              onTermsChange={setTermsConsent}
-            />
+              <label className="mt-4 block text-sm font-semibold">{t.situationLabel}</label>
+              <select className="mt-1 w-full rounded-xl border border-hairline px-3 py-2">
+                {t.situations.map((item) => (
+                  <option key={item}>{item}</option>
+                ))}
+              </select>
 
-            <p className="mt-4 font-display text-3xl font-bold text-primary-brand">
-              {t.freeWord} <span className="text-sm font-semibold text-graphite">{t.freeSub}</span>
-            </p>
-            <button className="mt-4 w-full rounded-md bg-primary-brand py-3 text-sm font-medium text-white">
-              {t.submit}
-            </button>
-            {sent && <p className="mt-3 text-sm text-charcoal">{t.sentMessage}</p>}
-          </form>
+              <label className="mt-4 block text-sm font-semibold">{t.vehicleLabel}</label>
+              <select className="mt-1 w-full rounded-xl border border-hairline px-3 py-2">
+                {t.vehicles.map((item) => (
+                  <option key={item}>{item}</option>
+                ))}
+              </select>
+
+              <label className="mt-4 block text-sm font-semibold">{t.notesLabel}</label>
+              <textarea
+                className="mt-1 min-h-28 w-full rounded-xl border border-hairline px-3 py-2"
+                placeholder={t.notesPlaceholder}
+              />
+
+              <SmsConsentFields
+                idPrefix="contact-sms"
+                language={language}
+                transactionalChecked={transactionalConsent}
+                onTransactionalChange={setTransactionalConsent}
+                promotionalChecked={promotionalConsent}
+                onPromotionalChange={setPromotionalConsent}
+                termsChecked={termsConsent}
+                onTermsChange={setTermsConsent}
+              />
+
+              <p className="mt-4 font-display text-3xl font-bold text-primary-brand">
+                {t.freeWord}{" "}
+                <span className="text-sm font-semibold text-graphite">{t.freeSub}</span>
+              </p>
+              <button className="mt-4 w-full rounded-md bg-primary-brand py-3 text-sm font-medium text-white">
+                {t.submit}
+              </button>
+            </form>
+          )}
 
           <div>
             <h2 className="font-display text-2xl font-semibold">¿Hablas español? Estamos aquí para ayudarte.</h2>

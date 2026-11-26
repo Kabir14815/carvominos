@@ -100,24 +100,6 @@ export default function SmsConsentFields({
           {t.termsSuffix}
         </span>
       </label>
-
-      <p className="pt-0.5 text-xs text-graphite">
-        <Link
-          to="/legal/privacy"
-          className="font-medium text-primary-brand underline underline-offset-2 hover:text-link-blue"
-        >
-          {t.privacyLabel}
-        </Link>
-        <span className="mx-1.5" aria-hidden="true">
-          ·
-        </span>
-        <Link
-          to="/legal/terms"
-          className="font-medium text-primary-brand underline underline-offset-2 hover:text-link-blue"
-        >
-          {t.termsLabel}
-        </Link>
-      </p>
     </div>
   )
 }
