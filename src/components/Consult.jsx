@@ -2,11 +2,48 @@ import { useState } from "react"
 import Reveal from "./Reveal"
 import SmsConsentFields from "./SmsConsentFields"
 
+function getInitialLanguage() {
+  if (typeof window !== "undefined") {
+    const param = new URLSearchParams(window.location.search).get("lang")
+    if (param?.toLowerCase().startsWith("es")) return "es"
+    if (document.documentElement.lang?.toLowerCase().startsWith("es")) return "es"
+  }
+  return "en"
+}
+
+const formCopy = {
+  en: {
+    nameLabel: "Your name",
+    namePlaceholder: "Maria",
+    phoneLabel: "Phone or WhatsApp",
+    phonePlaceholder: "(470) 000-0000",
+    freeWord: "Free",
+    freeSub: "to start",
+    submit: "See My Options",
+    sentMessage:
+      "Thank you. We received your note. A Carvamonos guide will follow up — no judgment, and no approval promise.",
+  },
+  es: {
+    nameLabel: "Tu nombre",
+    namePlaceholder: "María",
+    phoneLabel: "Teléfono o WhatsApp",
+    phonePlaceholder: "(470) 000-0000",
+    freeWord: "Gratis",
+    freeSub: "para empezar",
+    submit: "Ver mis opciones",
+    sentMessage:
+      "Gracias. Recibimos tu mensaje. Un guía de Carvamonos se pondrá en contacto contigo — sin juicios y sin promesas de aprobación.",
+  },
+}
+
 export default function Consult() {
   const [sent, setSent] = useState(false)
-  const [consentLang, setConsentLang] = useState("en")
+  const [language, setLanguage] = useState(getInitialLanguage)
   const [transactionalConsent, setTransactionalConsent] = useState(false)
   const [promotionalConsent, setPromotionalConsent] = useState(false)
+  const [termsConsent, setTermsConsent] = useState(false)
+
+  const t = formCopy[language] || formCopy.en
 
   return (
     <section id="see-my-options" className="bg-canvas py-8 md:py-10">
@@ -34,36 +71,61 @@ export default function Consult() {
               setSent(true)
             }}
           >
-            <label className="block text-sm font-semibold">Your name</label>
-            <input required className="mt-1 w-full rounded-xl border border-hairline px-3 py-2" placeholder="Maria" />
-            <label className="mt-4 block text-sm font-semibold">Phone or WhatsApp</label>
+            <div className="mb-4 flex items-center justify-end gap-1.5 text-xs">
+              <button
+                type="button"
+                onClick={() => setLanguage("en")}
+                className={`rounded-full px-2.5 py-0.5 font-medium transition ${
+                  language === "en"
+                    ? "bg-primary-brand text-white"
+                    : "border border-hairline bg-canvas text-charcoal hover:border-hairline-strong"
+                }`}
+              >
+                English
+              </button>
+              <button
+                type="button"
+                onClick={() => setLanguage("es")}
+                className={`rounded-full px-2.5 py-0.5 font-medium transition ${
+                  language === "es"
+                    ? "bg-primary-brand text-white"
+                    : "border border-hairline bg-canvas text-charcoal hover:border-hairline-strong"
+                }`}
+              >
+                Español
+              </button>
+            </div>
+
+            <label className="block text-sm font-semibold">{t.nameLabel}</label>
+            <input
+              required
+              className="mt-1 w-full rounded-xl border border-hairline px-3 py-2"
+              placeholder={t.namePlaceholder}
+            />
+            <label className="mt-4 block text-sm font-semibold">{t.phoneLabel}</label>
             <input
               required
               type="tel"
               className="mt-1 w-full rounded-xl border border-hairline px-3 py-2"
-              placeholder="(470) 000-0000"
+              placeholder={t.phonePlaceholder}
             />
             <SmsConsentFields
               idPrefix="consult-sms"
-              language={consentLang}
-              onLanguageChange={setConsentLang}
+              language={language}
               transactionalChecked={transactionalConsent}
               onTransactionalChange={setTransactionalConsent}
               promotionalChecked={promotionalConsent}
               onPromotionalChange={setPromotionalConsent}
+              termsChecked={termsConsent}
+              onTermsChange={setTermsConsent}
             />
             <p className="mt-4 font-display text-3xl font-bold text-primary-brand">
-              Free <span className="text-sm font-semibold text-graphite">to start</span>
+              {t.freeWord} <span className="text-sm font-semibold text-graphite">{t.freeSub}</span>
             </p>
             <button className="mt-4 w-full rounded-full bg-primary-brand py-3 text-sm font-semibold text-white">
-              See My Options
+              {t.submit}
             </button>
-            {sent && (
-              <p className="mt-3 text-sm text-charcoal">
-                Thank you. We received your note. A Carvamonos guide will follow up — no judgment,
-                and no approval promise.
-              </p>
-            )}
+            {sent && <p className="mt-3 text-sm text-charcoal">{t.sentMessage}</p>}
           </form>
         </Reveal>
       </div>

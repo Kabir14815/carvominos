@@ -5,19 +5,125 @@ import FinalCta from "../components/FinalCta"
 import SmsConsentFields from "../components/SmsConsentFields"
 import { whatsapp } from "../data"
 
+function getInitialLanguage() {
+  if (typeof window !== "undefined") {
+    const param = new URLSearchParams(window.location.search).get("lang")
+    if (param?.toLowerCase().startsWith("es")) return "es"
+    if (document.documentElement.lang?.toLowerCase().startsWith("es")) return "es"
+  }
+  return "en"
+}
+
+const formCopy = {
+  en: {
+    nameLabel: "Your name",
+    namePlaceholder: "Maria",
+    phoneLabel: "Phone or WhatsApp",
+    phonePlaceholder: "(470) 000-0000",
+    preferredLanguageLabel: "Preferred language",
+    languageOptions: [
+      { value: "Spanish", label: "Spanish" },
+      { value: "English", label: "English" },
+      { value: "Either", label: "Either is fine" },
+    ],
+    situationLabel: "Your situation",
+    situations: [
+      "Bad or low credit",
+      "Little or no credit history",
+      "ITIN / no Social Security number",
+      "Matricula or passport ID",
+      "Self employed — no pay stubs",
+      "Documentation issues",
+      "No driver license",
+      "Prime credit / best rate",
+      "Lease deals",
+      "Small down payment",
+      "Rejected by a dealership before",
+      "I’m not sure — I just need a car",
+    ],
+    vehicleLabel: "What kind of vehicle?",
+    vehicles: [
+      "Sedan (Camry, Civic, Elantra)",
+      "SUV (RAV4, Rogue)",
+      "Truck (F-150, Tacoma, Silverado)",
+      "I’m open",
+    ],
+    notesLabel: "Anything else we should know?",
+    notesPlaceholder: "I was turned away last month. I have about $1,000 to put down...",
+    freeWord: "Free",
+    freeSub: "to start",
+    submit: "See My Options",
+    sentMessage:
+      "Thank you. We received your note. A Carvamonos guide will follow up — no judgment, and no approval promise.",
+  },
+  es: {
+    nameLabel: "Tu nombre",
+    namePlaceholder: "María",
+    phoneLabel: "Teléfono o WhatsApp",
+    phonePlaceholder: "(470) 000-0000",
+    preferredLanguageLabel: "Idioma preferido",
+    languageOptions: [
+      { value: "Spanish", label: "Español" },
+      { value: "English", label: "Inglés" },
+      { value: "Either", label: "Cualquiera está bien" },
+    ],
+    situationLabel: "Tu situación",
+    situations: [
+      "Crédito malo o bajo",
+      "Poco o ningún historial de crédito",
+      "ITIN / sin número de Seguro Social",
+      "Matrícula consular o pasaporte",
+      "Trabajador independiente — sin talones de pago",
+      "Problemas con documentos",
+      "Sin licencia de conducir",
+      "Buen crédito / mejor tasa",
+      "Ofertas de arrendamiento (lease)",
+      "Enganche pequeño",
+      "Rechazado anteriormente en un concesionario",
+      "No estoy seguro — solo necesito un auto",
+    ],
+    vehicleLabel: "¿Qué tipo de vehículo buscas?",
+    vehicles: [
+      "Sedán (Camry, Civic, Elantra)",
+      "SUV (RAV4, Rogue)",
+      "Camioneta (F-150, Tacoma, Silverado)",
+      "Estoy abierto a opciones",
+    ],
+    notesLabel: "¿Algo más que debamos saber?",
+    notesPlaceholder:
+      "Me rechazaron el mes pasado. Tengo alrededor de $1,000 para el enganche...",
+    freeWord: "Gratis",
+    freeSub: "para empezar",
+    submit: "Ver mis opciones",
+    sentMessage:
+      "Gracias. Recibimos tu mensaje. Un guía de Carvamonos se pondrá en contacto contigo — sin juicios y sin promesas de aprobación.",
+  },
+}
+
 export default function Contact() {
+  const initialLang = getInitialLanguage()
   const [sent, setSent] = useState(false)
-  const [preferredLanguage, setPreferredLanguage] = useState("English")
-  const [consentLang, setConsentLang] = useState("en")
+  const [language, setLanguage] = useState(initialLang)
+  const [preferredLanguage, setPreferredLanguage] = useState(
+    initialLang === "es" ? "Spanish" : "English"
+  )
   const [transactionalConsent, setTransactionalConsent] = useState(false)
   const [promotionalConsent, setPromotionalConsent] = useState(false)
+  const [termsConsent, setTermsConsent] = useState(false)
+
+  const t = formCopy[language] || formCopy.en
+
+  const handleFormLanguageChange = (nextLang) => {
+    setLanguage(nextLang)
+    setPreferredLanguage(nextLang === "es" ? "Spanish" : "English")
+  }
 
   const handlePreferredLanguageChange = (value) => {
     setPreferredLanguage(value)
     if (value === "Spanish") {
-      setConsentLang("es")
+      setLanguage("es")
     } else if (value === "English") {
-      setConsentLang("en")
+      setLanguage("en")
     }
   }
 
@@ -40,80 +146,97 @@ export default function Contact() {
               setSent(true)
             }}
           >
-            <label className="block text-sm font-semibold">Your name</label>
-            <input required className="mt-1 w-full rounded-xl border border-hairline px-3 py-2" placeholder="Maria" />
+            <div className="mb-4 flex items-center justify-end gap-1.5 text-xs">
+              <button
+                type="button"
+                onClick={() => handleFormLanguageChange("en")}
+                className={`rounded-full px-2.5 py-0.5 font-medium transition ${
+                  language === "en"
+                    ? "bg-primary-brand text-white"
+                    : "border border-hairline bg-canvas text-charcoal hover:border-hairline-strong"
+                }`}
+              >
+                English
+              </button>
+              <button
+                type="button"
+                onClick={() => handleFormLanguageChange("es")}
+                className={`rounded-full px-2.5 py-0.5 font-medium transition ${
+                  language === "es"
+                    ? "bg-primary-brand text-white"
+                    : "border border-hairline bg-canvas text-charcoal hover:border-hairline-strong"
+                }`}
+              >
+                Español
+              </button>
+            </div>
 
-            <label className="mt-4 block text-sm font-semibold">Phone or WhatsApp</label>
+            <label className="block text-sm font-semibold">{t.nameLabel}</label>
+            <input
+              required
+              className="mt-1 w-full rounded-xl border border-hairline px-3 py-2"
+              placeholder={t.namePlaceholder}
+            />
+
+            <label className="mt-4 block text-sm font-semibold">{t.phoneLabel}</label>
             <input
               required
               type="tel"
               className="mt-1 w-full rounded-xl border border-hairline px-3 py-2"
-              placeholder="(470) 000-0000"
+              placeholder={t.phonePlaceholder}
             />
 
-            <SmsConsentFields
-              idPrefix="contact-sms"
-              language={consentLang}
-              onLanguageChange={setConsentLang}
-              transactionalChecked={transactionalConsent}
-              onTransactionalChange={setTransactionalConsent}
-              promotionalChecked={promotionalConsent}
-              onPromotionalChange={setPromotionalConsent}
-            />
-
-            <label className="mt-4 block text-sm font-semibold">Preferred language</label>
+            <label className="mt-4 block text-sm font-semibold">{t.preferredLanguageLabel}</label>
             <select
               value={preferredLanguage}
               onChange={(e) => handlePreferredLanguageChange(e.target.value)}
               className="mt-1 w-full rounded-xl border border-hairline px-3 py-2"
             >
-              <option>Spanish</option>
-              <option>English</option>
-              <option>Either is fine</option>
+              {t.languageOptions.map((opt) => (
+                <option key={opt.value} value={opt.value}>
+                  {opt.label}
+                </option>
+              ))}
             </select>
 
-            <label className="mt-4 block text-sm font-semibold">Your situation</label>
+            <label className="mt-4 block text-sm font-semibold">{t.situationLabel}</label>
             <select className="mt-1 w-full rounded-xl border border-hairline px-3 py-2">
-              <option>Bad or low credit</option>
-              <option>Little or no credit history</option>
-              <option>ITIN / no Social Security number</option>
-              <option>Matricula or passport ID</option>
-              <option>Self employed — no pay stubs</option>
-              <option>Documentation issues</option>
-              <option>No driver license</option>
-              <option>Prime credit / best rate</option>
-              <option>Lease deals</option>
-              <option>Small down payment</option>
-              <option>Rejected by a dealership before</option>
-              <option>I’m not sure — I just need a car</option>
+              {t.situations.map((item) => (
+                <option key={item}>{item}</option>
+              ))}
             </select>
 
-            <label className="mt-4 block text-sm font-semibold">What kind of vehicle?</label>
+            <label className="mt-4 block text-sm font-semibold">{t.vehicleLabel}</label>
             <select className="mt-1 w-full rounded-xl border border-hairline px-3 py-2">
-              <option>Sedan (Camry, Civic, Elantra)</option>
-              <option>SUV (RAV4, Rogue)</option>
-              <option>Truck (F-150, Tacoma, Silverado)</option>
-              <option>I’m open</option>
+              {t.vehicles.map((item) => (
+                <option key={item}>{item}</option>
+              ))}
             </select>
 
-            <label className="mt-4 block text-sm font-semibold">Anything else we should know?</label>
+            <label className="mt-4 block text-sm font-semibold">{t.notesLabel}</label>
             <textarea
               className="mt-1 min-h-28 w-full rounded-xl border border-hairline px-3 py-2"
-              placeholder="I was turned away last month. I have about $1,000 to put down..."
+              placeholder={t.notesPlaceholder}
+            />
+
+            <SmsConsentFields
+              idPrefix="contact-sms"
+              language={language}
+              transactionalChecked={transactionalConsent}
+              onTransactionalChange={setTransactionalConsent}
+              promotionalChecked={promotionalConsent}
+              onPromotionalChange={setPromotionalConsent}
+              termsChecked={termsConsent}
+              onTermsChange={setTermsConsent}
             />
 
             <p className="mt-4 font-display text-3xl font-bold text-primary-brand">
-              Free <span className="text-sm font-semibold text-graphite">to start</span>
+              {t.freeWord} <span className="text-sm font-semibold text-graphite">{t.freeSub}</span>
             </p>
             <button className="mt-4 w-full rounded-md bg-primary-brand py-3 text-sm font-medium text-white">
-              See My Options
+              {t.submit}
             </button>
-            {sent && (
-              <p className="mt-3 text-sm text-charcoal">
-                Thank you. We received your note. A Carvamonos guide will follow up — no judgment,
-                and no approval promise.
-              </p>
-            )}
+            {sent && <p className="mt-3 text-sm text-charcoal">{t.sentMessage}</p>}
           </form>
 
           <div>
